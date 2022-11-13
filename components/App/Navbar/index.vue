@@ -10,12 +10,12 @@
       @click="changeColorMode"
     >
       <LazyIconMoon
-        v-if="$colorMode.value === 'dark'"
+        v-if="$colorMode.value === 'light'"
         class="w-4 h-4 md:w-5 md:h-5"
       />
       <LazyIconSun v-else class="w-4 h-4 md:w-5 md:h-5" />
       <span class="text-xs md:text-base leading-none font-semibold"
-        >{{ $colorMode.value }} Mode</span
+        >{{ $colorMode.value === 'light' ? 'Dark' : 'Light' }} Mode</span
       >
     </button>
   </nav>
