@@ -1,6 +1,5 @@
 import { defineConfig } from '@windicss/plugin-utils'
-// import plugin from 'windicss/plugin'
-
+import plugin from 'windicss/plugin'
 export default defineConfig({
   /**
    * Write windi classes in html attributes.
@@ -22,28 +21,40 @@ export default defineConfig({
       },
       boxShadow: {
         navbar: '0px 2px 4px rgba(0, 0, 0, 0.0562443)',
+        'search-filter': '0px 2px 9px rgba(0, 0, 0, 0.0532439)',
       },
     },
   },
 
-  // plugins: [
-  //   plugin(({ addUtilities }) => {
-  //     const newUtilities = {
-  //       '.container': {
-  //         width: '100%',
-  //         maxWidth: '1440px',
-  //         margin: '0 auto',
-  //         padding: '0 16px',
-  //         color: 'inherit',
-  //         '@media (min-width: 768px)': {
-  //           padding: '0 32px',
-  //         },
-  //         '@media (min-width: 1024px)': {
-  //           padding: '0 80px',
-  //         },
-  //       },
-  //     }
-  //     addUtilities(newUtilities)
-  //   }),
-  // ],
+  plugins: [
+    plugin(({ addUtilities }) => {
+      const newUtilities = {
+        '.container': {
+          width: '100%',
+          maxWidth: '1440px',
+          margin: '0 auto',
+          padding: '0 16px',
+          '@media (min-width: 768px)': {
+            padding: '0 32px',
+          },
+          '@media (min-width: 1024px)': {
+            padding: '0 64px',
+          },
+          '@media (min-width: 1440px)': {
+            padding: '0 80px',
+          },
+        },
+        '.select-arrow': {
+          '-webkit-appearance': 'none',
+          '-moz-appearance': 'none',
+          backgroundColor: 'transparent',
+          'background-image': 'url("@/assets/icons/expand-more.svg")',
+          'background-repeat': 'no-repeat',
+          'background-position-x': 'calc(100% - 19px)',
+          'background-position-y': '50%',
+        },
+      }
+      addUtilities(newUtilities)
+    }),
+  ],
 })
