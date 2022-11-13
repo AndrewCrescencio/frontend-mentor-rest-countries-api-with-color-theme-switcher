@@ -7,14 +7,21 @@ export default defineConfig({
    * @see https://windicss.org/features/attributify.html
    */
   attributify: true,
+  darkMode: 'class',
   theme: {
     extend: {
-      // colors: {
-      //   white: '#fff',
-      //   black: '#121212',
-      // },
+      colors: {
+        white: '#fff',
+        lightDarkBg: '#2B3844',
+        black: '#121212',
+      },
       fontFamily: {
         nunito: ['Nunito Sans', 'system-ui'],
+        nunitoSemibold: ['Nunito Sans Semibold', 'system-ui'],
+        nunitoBold: ['Nunito Sans Bold', 'system-ui'],
+      },
+      boxShadow: {
+        navbar: '0px 2px 4px rgba(0, 0, 0, 0.0562443)',
       },
     },
   },

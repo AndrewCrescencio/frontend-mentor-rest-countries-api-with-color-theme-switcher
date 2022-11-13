@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Nunito Sans';
+  font-family: 'Nunito Sans Semibold';
   src: url('~assets/fonts/NunitoSans-SemiBold.woff2') format('woff2'),
     url('~assets/fonts/NunitoSans-SemiBold.woff') format('woff');
   font-weight: 600;
@@ -8,7 +8,7 @@
 }
 
 @font-face {
-  font-family: 'Nunito Sans';
+  font-family: 'Nunito Sans Bold';
   src: url('~assets/fonts/NunitoSans-ExtraBold.woff2') format('woff2'),
     url('~assets/fonts/NunitoSans-ExtraBold.woff') format('woff');
   font-weight: bold;
