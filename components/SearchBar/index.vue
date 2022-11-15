@@ -25,31 +25,37 @@
       >
         <button
           class="hover:bg-[#fafafa] dark:hover:text-lightDarkBg hover:font-nunitoSemibold hover:font-semibold"
-          @click="selected = 'Africa'"
+          @click="$store.dispatch('searchFilter', 'All')"
+        >
+          All
+        </button>
+        <button
+          class="hover:bg-[#fafafa] dark:hover:text-lightDarkBg hover:font-nunitoSemibold hover:font-semibold"
+          @click="$store.dispatch('searchFilter', 'Africa')"
         >
           Africa
         </button>
         <button
           class="hover:bg-[#fafafa] dark:hover:text-lightDarkBg hover:font-nunitoSemibold hover:font-semibold"
-          @click="selected = 'America'"
+          @click="$store.dispatch('searchFilter', 'Americas')"
         >
           America
         </button>
         <button
           class="hover:bg-[#fafafa] dark:hover:text-lightDarkBg hover:font-nunitoSemibold hover:font-semibold"
-          @click="selected = 'Asia'"
+          @click="$store.dispatch('searchFilter', 'Asia')"
         >
           Asia
         </button>
         <button
           class="hover:bg-[#fafafa] dark:hover:text-lightDarkBg hover:font-nunitoSemibold hover:font-semibold"
-          @click="selected = 'Europe'"
+          @click="$store.dispatch('searchFilter', 'Europe')"
         >
           Europe
         </button>
         <button
           class="hover:bg-[#fafafa] dark:hover:text-lightDarkBg hover:font-nunitoSemibold hover:font-semibold"
-          @click="selected = 'Oceania'"
+          @click="$store.dispatch('searchFilter', 'Oceania')"
         >
           Oceania
         </button>
