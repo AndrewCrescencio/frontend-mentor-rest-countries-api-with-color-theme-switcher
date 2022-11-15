@@ -21,7 +21,7 @@
       </button>
       <div
         v-if="filterOpen"
-        class="flex flex-col px-4 py-3 mt-2 font-normal bg-white children:px-2 children:text-left dark:bg-lightDarkBg shadow-search-filter children:w-full children:py-1 children:font-nunito children:rounded rounded"
+        class="mt-2 flex w-[200px] flex-col px-4 py-3 font-normal bg-white children:px-2 children:text-left dark:bg-lightDarkBg shadow-search-filter children:w-full children:py-1 children:font-nunito children:rounded rounded absolute"
       >
         <button
           class="hover:bg-[#fafafa] dark:hover:text-lightDarkBg hover:font-nunitoSemibold hover:font-semibold"
