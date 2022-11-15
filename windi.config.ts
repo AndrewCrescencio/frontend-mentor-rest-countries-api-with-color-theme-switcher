@@ -22,6 +22,7 @@ export default defineConfig({
       boxShadow: {
         navbar: '0px 2px 4px rgba(0, 0, 0, 0.0562443)',
         'search-filter': '0px 2px 9px rgba(0, 0, 0, 0.0532439)',
+        card: '0px 0px 7px 2px rgba(0, 0, 0, 0.0294384)',
       },
     },
   },
