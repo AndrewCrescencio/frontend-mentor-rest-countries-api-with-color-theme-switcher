@@ -1,25 +1,43 @@
 export const state = () => ({
   content: [],
-  searchFilter: 'All',
+  regionFilter: 'All',
+  searchBar: '',
 })
 
 export const getters = {
-  getContentByRegion: (state) => (filter) => {
-    if (filter === 'All') {
-      return state.content
-    } else {
-      const list = []
-      // return state.content[filter]
+  getContent: (state) => {
+    if (state.regionFilter !== 'All') {
+      const content = []
       state.content.forEach((item) => {
-        if (item.region === filter) {
-          list.push(item)
+        if (item.region === state.regionFilter) {
+          content.push(item)
         }
       })
-      return list
+
+      if (state.searchBar.length >= 1) {
+        // eslint-disable-next-line no-unreachable
+        const filteredContent = []
+        content.forEach((item) => {
+          if (item.name.toLowerCase().includes(state.searchBar)) {
+            filteredContent.push(item)
+          }
+        })
+
+        return filteredContent
+      } else {
+        return content
+      }
+    } else if (state.searchBar.length >= 1) {
+      const filteredContent = []
+      state.content.forEach((item) => {
+        if (item.name.toLowerCase().includes(state.searchBar)) {
+          filteredContent.push(item)
+        }
+      })
+      return filteredContent
+    } else {
+      return state.content
     }
-  },
-  searchFilter: (state) => {
-    return state.searchFilter
   },
 }
 
@@ -50,8 +68,11 @@ export const actions = {
       console.error({ statusCode: 500, message: 'Error internal' })
     }
   },
-  searchFilter({ commit }, payload) {
-    commit('SET_SEARCH_FILTER', payload)
+  setRegionFilter({ commit }, payload) {
+    commit('SET_REGION_FILTER', payload)
+  },
+  setSearchBar({ commit }, payload) {
+    commit('SET_SEARCH_BAR', payload)
   },
 }
 
@@ -59,7 +80,10 @@ export const mutations = {
   SET_CONTENT(state, value) {
     state.content = value
   },
-  SET_SEARCH_FILTER(state, value) {
-    state.searchFilter = value
+  SET_REGION_FILTER(state, value) {
+    state.regionFilter = value
+  },
+  SET_SEARCH_BAR(state, value) {
+    state.searchBar = value
   },
 }

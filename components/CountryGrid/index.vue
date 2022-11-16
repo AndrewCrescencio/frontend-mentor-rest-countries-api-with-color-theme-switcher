@@ -7,8 +7,6 @@
         <CountryCard :key="i" :country="country" />
       </template>
     </div>
-    {{ content }}
-    {{ $store.getters.getContentByRegion('oceania') }}
   </section>
 </template>
 
@@ -22,40 +20,10 @@ export default {
     }
   },
   computed: {
-    ...mapGetters({ get: 'getContentByRegion' }),
+    ...mapGetters({ get: 'getContent' }),
     content() {
-      const filter = this.$store.getters.searchFilter
-      return this.get(filter)
+      return this.get
     },
   },
-  // watch: {
-  //   content: function (newVal, oldVal) {
-  //     this.go()
-  //   },
-  // },
-  // methods: {
-  //   go() {
-  //     window.alert('oi')
-  //     this.show = false
-  //     this.$nextTick(() => {
-  //       this.show = true
-  //     })
-  //   },
-  // },
-  // mounted() {
-  //   this.content = this.$store.state.content
-  // },
-  // methods: {
-  //   changeContent(filter) {
-  //     if (filter === 'oceania') {
-  //       this.content = this.$store.getters.getContentByRegion(filter)
-  //     }
-  //     // window.alert(this.$store.getters)
-  //     // console.log(this.$store.getters)
-  //     console.log(this.$store.getters.getContentByRegion(filter))
-  //     const teste = this.$store.getters.getContentByRegion(filter)
-  //     console.log(teste)
-  //   },
-  // },
 }
 </script>

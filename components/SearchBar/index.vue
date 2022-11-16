@@ -5,10 +5,12 @@
     <div
       class="px-8 h-14 flex items-center rounded shadow-navbar dark:bg-[#2B3844] max-w-[480px] w-full"
     >
-      <IconSearch class="text-[#B2B2B2] mr-[26px]" />
+      <IconSearch class="text-[#B2B2B2] mr-[22px]" />
       <input
+        v-model="searchInput"
         type="text"
-        class="text-xs font-normal !leading-none bg-transparent rounded font-nunito md:text-sm focus:border-none"
+        maxlength="40"
+        class="w-full p-2 text-xs font-normal !leading-none bg-transparent rounded font-nunito md:text-sm focus:border-none"
         placeholder="Search for a country…"
       />
     </div>
@@ -25,37 +27,37 @@
       >
         <button
           class="hover:bg-[#fafafa] dark:hover:text-lightDarkBg hover:font-nunitoSemibold hover:font-semibold"
-          @click="$store.dispatch('searchFilter', 'All')"
+          @click="$store.dispatch('setRegionFilter', 'All')"
         >
           All
         </button>
         <button
           class="hover:bg-[#fafafa] dark:hover:text-lightDarkBg hover:font-nunitoSemibold hover:font-semibold"
-          @click="$store.dispatch('searchFilter', 'Africa')"
+          @click="$store.dispatch('setRegionFilter', 'Africa')"
         >
           Africa
         </button>
         <button
           class="hover:bg-[#fafafa] dark:hover:text-lightDarkBg hover:font-nunitoSemibold hover:font-semibold"
-          @click="$store.dispatch('searchFilter', 'Americas')"
+          @click="$store.dispatch('setRegionFilter', 'Americas')"
         >
           America
         </button>
         <button
           class="hover:bg-[#fafafa] dark:hover:text-lightDarkBg hover:font-nunitoSemibold hover:font-semibold"
-          @click="$store.dispatch('searchFilter', 'Asia')"
+          @click="$store.dispatch('setRegionFilter', 'Asia')"
         >
           Asia
         </button>
         <button
           class="hover:bg-[#fafafa] dark:hover:text-lightDarkBg hover:font-nunitoSemibold hover:font-semibold"
-          @click="$store.dispatch('searchFilter', 'Europe')"
+          @click="$store.dispatch('setRegionFilter', 'Europe')"
         >
           Europe
         </button>
         <button
           class="hover:bg-[#fafafa] dark:hover:text-lightDarkBg hover:font-nunitoSemibold hover:font-semibold"
-          @click="$store.dispatch('searchFilter', 'Oceania')"
+          @click="$store.dispatch('setRegionFilter', 'Oceania')"
         >
           Oceania
         </button>
@@ -71,7 +73,23 @@ export default {
     return {
       selected: null,
       filterOpen: false,
+      searchInput: '',
     }
+  },
+  watch: {
+    searchInput(newVal, oldVal) {
+      if (
+        (newVal.length < 40 && newVal.length >= 1) ||
+        (oldVal.length === 1 && newVal.length === 0)
+      ) {
+        this.searchInputDispatch(this.searchInput.toLowerCase())
+      }
+    },
+  },
+  methods: {
+    searchInputDispatch(val) {
+      this.$store.dispatch('setSearchBar', val)
+    },
   },
 }
 </script>
