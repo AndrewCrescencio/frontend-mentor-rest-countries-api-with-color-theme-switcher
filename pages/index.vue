@@ -1,9 +1,8 @@
 <template>
-  <main class="min-h-screen bg-[#fafafa] dark:bg-[#202C36]">
-    <AppNavbar />
+  <div class="min-h-screen">
     <SearchBar />
     <CountryGrid />
-  </main>
+  </div>
 </template>
 
 <script>
