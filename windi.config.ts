@@ -9,6 +9,9 @@ export default defineConfig({
   darkMode: 'class',
   theme: {
     extend: {
+      gridTemplateColumns: {
+        countryGrid: 'repeat(auto-fit, minmax(264px, 1fr))',
+      },
       colors: {
         white: '#fff',
         lightDarkBg: '#2B3844',

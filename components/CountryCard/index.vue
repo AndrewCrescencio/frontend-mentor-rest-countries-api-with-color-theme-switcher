@@ -1,12 +1,12 @@
 <template>
   <nuxt-link
     :to="'/' + country.name"
-    class="max-w-[264px] w-full shadow-card overflow-hidden rounded"
+    class="shadow-card overflow-hidden rounded"
   >
     <nuxt-img
       :src="country.flag"
       :alt="country.name + ' flag'"
-      class="w-full h-40"
+      class="w-full"
       placeholder
       width="264"
       height="160"
