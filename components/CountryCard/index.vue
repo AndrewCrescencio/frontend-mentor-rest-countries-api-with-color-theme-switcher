@@ -6,7 +6,7 @@
     <nuxt-img
       :src="country.flag"
       :alt="country.name + ' flag'"
-      class="w-full"
+      class="w-full h-auto"
       placeholder
       width="264"
       height="160"

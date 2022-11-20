@@ -9,9 +9,12 @@ export default defineConfig({
   darkMode: 'class',
   theme: {
     extend: {
-      gridTemplateColumns: {
-        countryGrid: 'repeat(auto-fit, minmax(264px, 1fr))',
+      fontSize: {
+        '3xl': '2rem',
       },
+      // gridTemplateColumns: {
+      //   countryGrid: 'repeat(auto-fit, minmax(264px, 1fr))',
+      // },
       colors: {
         white: '#fff',
         lightDarkBg: '#2B3844',
@@ -59,6 +62,36 @@ export default defineConfig({
         },
       }
       addUtilities(newUtilities)
+    }),
+    plugin(({ addComponents }) => {
+      const buttons = {
+        '.btn-border-country': {
+          padding: '6px 30px',
+          fontFamily: 'Nunito Sans',
+          fontWeight: '300',
+          fontSize: '12px',
+          boxShadow: '0px 0px 4px 1px rgba(0, 0, 0, 0.104931)',
+          borderRadius: '2px',
+          '@media (min-width: 768px)': {
+            fontSize: '14px',
+          },
+        },
+        '.btn-blue': {
+          backgroundColor: '#3490dc',
+          color: '#fff',
+          '&:hover': {
+            backgroundColor: '#2779bd',
+          },
+        },
+        '.btn-red': {
+          backgroundColor: '#e3342f',
+          color: '#fff',
+          '&:hover': {
+            backgroundColor: '#cc1f1a',
+          },
+        },
+      }
+      addComponents(buttons)
     }),
   ],
 })

@@ -39,6 +39,31 @@ export const getters = {
       return state.content
     }
   },
+  getCountry: (state) => (country) => {
+    let countryData = {}
+
+    for (let i = 0; i < state.content.length; i++) {
+      if (state.content[i].name.toLowerCase() === country) {
+        countryData = state.content[i]
+        break
+      } else {
+        continue
+      }
+    }
+    countryData.borders.forEach((borderCountry, index) => {
+      // console.log(borderCountry)
+      for (let i = 0; i < state.content.length; i++) {
+        if (state.content[i].cca3 === borderCountry) {
+          console.log(state.content[i])
+          countryData.borders[index] = state.content[i].name
+          console.log(countryData.borders[index])
+        } else {
+          continue
+        }
+      }
+    })
+    return countryData
+  },
 }
 
 export const actions = {
@@ -54,6 +79,8 @@ export const actions = {
           population: item.population,
           region: item.region,
           capital: item.capital,
+          cca3: item.cca3,
+          borders: item.borders,
         })
       })
       if (data) {
@@ -65,7 +92,7 @@ export const actions = {
         })
       }
     } catch (e) {
-      console.error({ statusCode: 500, message: 'Error internal' })
+      console.error({ statusCode: 500, message: 'Error internal' }, e)
     }
   },
   setRegionFilter({ commit }, payload) {

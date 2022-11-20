@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="bg-white dark:bg-lightDarkBg shadow-navbar lg:px-20 text-[#111517] dark:text-[#fff]"
+    class="bg-white dark:bg-lightDarkBg shadow-navbar text-[#111517] dark:text-[#fff]"
   >
     <div class="container flex items-center justify-between h-20">
       <h1
