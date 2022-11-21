@@ -43,7 +43,7 @@ export const getters = {
     let countryData = {}
 
     for (let i = 0; i < state.content.length; i++) {
-      if (state.content[i].name.toLowerCase() === country) {
+      if (state.content[i].name === country) {
         countryData = state.content[i]
         break
       } else {

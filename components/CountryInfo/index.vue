@@ -30,7 +30,7 @@
           <nuxt-link
             v-for="(borderCountry, i) in country.borders"
             :key="i"
-            :to="'/' + borderCountry.toLowerCase()"
+            :to="'/' + borderCountry.replace(' ', '-')"
             class="btn-border-country"
           >
             {{ borderCountry }}
@@ -51,8 +51,8 @@ export default {
       return this.get(this.routeParam)
     },
     routeParam() {
-      const param = this.$route.params.country
-      return param.toLowerCase()
+      const param = this.$route.params.country.replace('-', ' ')
+      return param
     },
   },
 }
