@@ -28,12 +28,8 @@
 <script>
 export default {
   name: 'AppNavbar',
-  // created() {
-  //   console.log(this.$colorMode)
-  // },
   methods: {
     changeColorMode() {
-      // window.alert(this.$colorMode.value)
       this.$colorMode.value === 'dark'
         ? (this.$colorMode.value = 'light')
         : (this.$colorMode.value = 'dark')

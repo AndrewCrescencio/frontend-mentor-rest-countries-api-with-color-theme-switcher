@@ -51,12 +51,9 @@ export const getters = {
       }
     }
     countryData.borders.forEach((borderCountry, index) => {
-      // console.log(borderCountry)
       for (let i = 0; i < state.content.length; i++) {
         if (state.content[i].cca3 === borderCountry) {
-          console.log(state.content[i])
           countryData.borders[index] = state.content[i].name
-          console.log(countryData.borders[index])
         } else {
           continue
         }
