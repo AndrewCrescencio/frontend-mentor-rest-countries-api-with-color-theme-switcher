@@ -1,15 +1,53 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'frontendmentor-challenge',
+    title: 'Frontend Mentor Challenge',
     htmlAttrs: {
       lang: 'en',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
+      {
+        hid: 'og:site_name',
+        name: 'og:site_name',
+        content:
+          'Frontend Mentor Challenge - REST Countries API with color theme switcher by Andrew Crescencio',
+      },
+      {
+        hid: 'theme-color',
+        name: 'theme-color',
+        content: '#ffffff',
+      },
+      {
+        hid: 'og:title',
+        name: 'og:title',
+        content:
+          'Answer to Frontend Mentor Challenge REST Countries API with color theme switcher by Andrew Crescencio',
+      },
+      {
+        hid: 'apple-mobile-web-app-title',
+        name: 'apple-mobile-web-app-title',
+        content:
+          'Answer to Frontend Mentor Challenge REST Countries API with color theme switcher by Andrew Crescencio',
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Answer to Frontend Mentor Challenge REST Countries API with color theme switcher by Andrew Crescencio',
+      },
+      {
+        hid: 'og:description',
+        name: 'og:description',
+        content: 'Made with NuxtJS, Windi CSS and Vuex',
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: process.env.BASE_URL + '/images/open-graph-image.png',
+      },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
