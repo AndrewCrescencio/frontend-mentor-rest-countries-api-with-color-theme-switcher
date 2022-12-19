@@ -50,15 +50,18 @@ export const getters = {
         continue
       }
     }
-    countryData.borders.forEach((borderCountry, index) => {
-      for (let i = 0; i < state.content.length; i++) {
-        if (state.content[i].cca3 === borderCountry) {
-          countryData.borders[index] = state.content[i].name
-        } else {
-          continue
+    if (countryData.borders) {
+      countryData.borders.forEach((borderCountry, index) => {
+        const contentLength = state.content.length
+        for (let i = 0; i < contentLength; i++) {
+          if (state.content[i].cca3 === borderCountry) {
+            countryData.borders[index] = state.content[i].name
+          } else {
+            continue
+          }
         }
-      }
-    })
+      })
+    }
     return countryData
   },
 }
