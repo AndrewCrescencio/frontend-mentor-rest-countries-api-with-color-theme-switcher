@@ -1,6 +1,6 @@
 <template>
   <nuxt-link
-    :to="'/' + country.name"
+    :to="'/' + country.name.replace(' ', '-')"
     class="shadow-card overflow-hidden rounded"
   >
     <nuxt-img
