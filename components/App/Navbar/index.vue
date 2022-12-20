@@ -3,11 +3,12 @@
     class="bg-white dark:bg-lightDarkBg shadow-navbar text-[#111517] dark:text-[#fff]"
   >
     <div class="container flex items-center justify-between h-20">
-      <h1
+      <nuxt-link
+        to="/"
         class="font-extrabold font-nunitoBold font-font-extrabold text-sm md:text-2xl"
       >
         Where in the world?
-      </h1>
+      </nuxt-link>
       <button
         class="flex items-center p-0 gap-x-2 font-nunitoSemibold"
         @click="changeColorMode"
