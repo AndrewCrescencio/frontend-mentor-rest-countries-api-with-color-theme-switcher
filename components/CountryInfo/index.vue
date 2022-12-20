@@ -8,7 +8,7 @@
       class="max-w-[560px] w-full h-auto lg:(h-[401px]) rounded-[10px]"
     />
 
-    <div class="mt-11 w-full max-w-[560px] lg:(mt-0 max-w-[574px])">
+    <div class="mt-11 w-full max-w-[560px] lg:(mt-10 max-w-[574px] self-start)">
       <h1 class="font-nunito font-bold text-3xl">{{ country.name }}</h1>
       <div class="mt-4 lg:mt-[23px] flex justify-between flex-wrap gap-y-8">
         <div>
@@ -24,7 +24,7 @@
           <p><b>Languages:</b> Dutch, French, German</p>
         </div>
       </div>
-      <div class="mt-8 lg:(mt-[68px] flex gap-4 item)">
+      <div v-if="country.borders" class="mt-8 lg:(mt-[68px] flex gap-4 item)">
         <p class="w-full max-w-max">Border Countries:</p>
         <div class="mt-4 lg:mt-0 flex gap-10px flex-wrap">
           <nuxt-link
