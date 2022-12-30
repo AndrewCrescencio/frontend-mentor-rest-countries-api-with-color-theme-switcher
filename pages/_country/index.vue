@@ -1,7 +1,5 @@
 <template>
-  <main class="min-h-screen bg-[#fafafa] dark:bg-[#202C36]">
-    <CountryInfo />
-  </main>
+  <CountryInfo />
 </template>
 
 <script>
