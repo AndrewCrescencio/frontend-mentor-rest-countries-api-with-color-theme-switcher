@@ -80,7 +80,7 @@ export default {
     searchInput(newVal, oldVal) {
       if (
         (newVal.length < 40 && newVal.length >= 1) ||
-        (oldVal.length === 1 && newVal.length === 0)
+        (oldVal.length && newVal.length === 0)
       ) {
         this.searchInputDispatch(this.searchInput.toLowerCase())
       }
