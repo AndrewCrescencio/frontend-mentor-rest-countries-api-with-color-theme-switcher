@@ -1,6 +1,6 @@
 <template>
   <section
-    class="container flex flex-col md:flex-row md:justify-between !mt-6 !lg:mt-12 gap-y-10 text-[#111517] dark:text-white"
+    class="!mt-6 container flex flex-col gap-y-10 text-[#111517] dark:text-white lg:(flex-row !lg:mt-12 justify-between)"
   >
     <div
       class="px-8 h-14 flex items-center rounded shadow-navbar dark:bg-[#2B3844] max-w-[480px] w-full"
