@@ -12,9 +12,9 @@ export default defineConfig({
       fontSize: {
         '3xl': '2rem',
       },
-      // gridTemplateColumns: {
-      //   countryGrid: 'repeat(auto-fit, minmax(264px, 1fr))',
-      // },
+      gridTemplateColumns: {
+        countryGrid: 'repeat(auto-fill, minmax(264px, 1fr))',
+      },
       colors: {
         white: '#fff',
         lightDarkBg: '#2B3844',

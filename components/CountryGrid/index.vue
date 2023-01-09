@@ -1,7 +1,7 @@
 <template>
   <section class="container">
     <div
-      class="mt-8 flex flex-wrap justify-start gap-10 lg:(mt-12 gap-y-[75px] gap-x-[74px])"
+      class="mt-8 grid grid-cols-countryGrid gap-10 lg:(mt-12 gap-y-[75px] gap-x-[74px])"
     >
       <CountryCard
         v-for="(country, i) in content"
