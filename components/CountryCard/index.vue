@@ -1,7 +1,7 @@
 <template>
   <nuxt-link
     :to="'/' + country.name.replace(' ', '-')"
-    class="w-full max-w-[264px] shadow-card overflow-hidden rounded"
+    class="w-full shadow-card overflow-hidden rounded"
   >
     <nuxt-img
       :src="country.flag"
