@@ -1,8 +1,6 @@
 <template>
   <section class="container">
-    <div
-      class="mt-8 flex flex-wrap justify-start gap-10 lg:(mt-12 gap-y-[75px] gap-x-[74px])"
-    >
+    <div class="mt-8 grid gap-10 grid-cols-countryGrid xl:(mt-12 gap-[74px])">
       <CountryCard
         v-for="(country, i) in content"
         :key="i"
