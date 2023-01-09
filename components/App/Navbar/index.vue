@@ -1,7 +1,5 @@
 <template>
-  <nav
-    class="bg-white dark:bg-lightDarkBg shadow-navbar text-[#111517] dark:text-[#fff]"
-  >
+  <nav class="bg-white dark:bg-lightDarkBg shadow-navbar">
     <div class="container flex items-center justify-between h-20">
       <nuxt-link
         to="/"
